@@ -12,7 +12,7 @@ load_dotenv()
 
 TOKEN_GITHUB = os.getenv('TOKEN_GITHUB', '')
 USER = "moekernel"
-REPO = "scripts"
+REPO = "clang"
 
 def get_tag_release():
     response = requests.get(release_url)
