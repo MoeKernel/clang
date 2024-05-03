@@ -18,7 +18,6 @@ prerelease = False
 token = os.getenv('TOKEN_GITHUB', '')
 
 def draft_release():
-
     url = f'https://api.github.com/repos/{owner}/{repo}/releases'
 
     headers = {
@@ -42,10 +41,10 @@ def draft_release():
     )
 
     if response.status_code == 201:
-        print('Novo lançamento criado com sucesso!')
+        print('New release created successfully!')
     else:
         print(
-            'Erro ao criar o lançamento:', 
+            'Error creating release:',
             response.status_code, 
             response.text
         )
