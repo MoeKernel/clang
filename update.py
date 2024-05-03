@@ -19,6 +19,13 @@ def get_tag_release():
     latest_release_tag = response.url.split("/")[-1]
     return latest_release_tag
 
+def get_tag_body():
+    url = f"https://api.github.com/repos/ZyCromerZ/Clang/releases/tags/{get_tag_release()}"
+    response = requests.get(url).json()
+    body = response["body"]
+
+    return body
+
 def read_date_from_file():
     if os.path.exists(date_file_path):
         with open(date_file_path, "r") as f:
@@ -45,7 +52,7 @@ if latest_release_tag != local_date:
 
     # commit and push.
     subprocess.run(["git", "add", date_file_path])
-    subprocess.run(["git", "commit", "-m", f"Updated Clang: Clang-19.0.0git-{latest_release_tag}-release"])
+    subprocess.run(["git", "commit", "-m", f"Updated Clang: {get_tag_release()}\n{get_tag_body()}"])
     subprocess.run(["git", "push"])
 else:
     print("No new release detected.")
