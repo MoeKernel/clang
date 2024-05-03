@@ -23,7 +23,6 @@ def get_tag_body():
     url = f"https://api.github.com/repos/ZyCromerZ/Clang/releases/tags/{get_tag_release()}"
     response = requests.get(url).json()
     body = response["body"]
-
     return body
 
 def read_date_from_file():
