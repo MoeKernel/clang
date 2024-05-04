@@ -2,7 +2,7 @@ import json
 import os
 import requests
 from update import (
-    get_tag_body,
+    get_body,
     get_tag_release
 )
 
@@ -11,7 +11,7 @@ repo = 'clang'
 tag_name = get_tag_release()
 target_commitish = 'main'
 name = get_tag_release()
-body = get_tag_body()
+body = get_body()
 draft = False
 prerelease = False
 
