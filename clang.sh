@@ -32,6 +32,7 @@ tar -xzf "$output_file" -C "$destination_dir"
 
 if [ $? -eq 0 ]; then
   echo "Archive extracted with success in '$destination_dir'."
+  rm -rf $clang_gz
 else
   echo "The extraction of the zip was failed!"
 fi
