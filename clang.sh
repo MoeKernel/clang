@@ -5,10 +5,11 @@
 #     Akari Azusagawa © 2023
 # ----------------------------- 
 
+user="ZyCromerZ" # GitHub user.
 date_=$(cat date_.txt) # updated clang version.
 version="19.0.0git-$date_-release"
 clang_gz="Clang-19.0.0git-$date_.tar.gz"
-url="https://github.com/ZyCromerZ/Clang/releases/download/$version/$clang_gz"
+url="https://github.com/$user/Clang/releases/download/$version/$clang_gz"
 
 output_file="$clang_gz"
 destination_dir="$HOME/tc/clang-19.0.0"
