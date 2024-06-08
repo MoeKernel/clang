@@ -51,7 +51,7 @@ if latest_release_tag != local_date:
 
     # commit and push.
     subprocess.run(["git", "add", date_file_path])
-    subprocess.run(["git", "commit", "-m", f"Updated Clang: {get_tag_release()}\n{get_body()}"])
+    subprocess.run(["git", "commit", "-m", f"Clang: {get_tag_release()}\n{get_body()}"])
     subprocess.run(["git", "push"])
 else:
     print("No new release detected.")
