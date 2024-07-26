@@ -20,12 +20,13 @@ if [ -d "$destination_dir" ]; then
 fi
 
 if ! command -v curl &>/dev/null; then
-  echo "The command 'curl' not installed. Please, install for continue."
+  echo "The command 'curl' is not installed. Please install it to continue."
   sudo apt update -y 
   sudo apt install curl -y
   exit 1
 fi
 
+echo "Downloading $url..."
 curl -LO "$url"
 
 if [ $? -ne 0 ]; then
@@ -33,12 +34,18 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Check the contents of the downloaded file
+echo "Downloaded file contents:"
+file "$output_file"
+echo "First few lines of the downloaded file:"
+head "$output_file"
+
 mkdir -p "$destination_dir"
 tar -xzf "$output_file" -C "$destination_dir"
 
 if [ $? -eq 0 ]; then
-  echo "Archive extracted with success in '$destination_dir'."
-  rm -rf $clang_gz
+  echo "Archive extracted successfully in '$destination_dir'."
+  rm -rf "$clang_gz"
 else
-  echo "The extraction of the zip was failed!"
+  echo "The extraction of the zip failed!"
 fi
