@@ -35,12 +35,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Check the contents of the downloaded file
-echo "Downloaded file contents:"
-file "$output_file"
-echo "First few lines of the downloaded file:"
-head "$output_file"
-
 mkdir -p "$destination_dir"
 tar -xzf "$output_file" -C "$destination_dir"
 
