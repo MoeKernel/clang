@@ -7,7 +7,7 @@
 
 user="Neutron-Toolchains" # GitHub user.
 repo="clang-build-catalogue"
-version="11032023"
+version="11032023" # clang neutron 17.0.0
 clang_tar_zst="neutron-clang-$version.tar.zst"
 url="https://github.com/$user/$repo/releases/download/$version/$clang_tar_zst"
 
