@@ -8,7 +8,7 @@
 user="Neutron-Toolchains" # GitHub user.
 repo="clang-build-catalogue"
 version="11032023"
-clang_tar_zst="neutron-clang-11032023.tar.zst"
+clang_tar_zst="neutron-clang-$version.tar.zst"
 url="https://github.com/$user/$repo/releases/download/$version/$clang_tar_zst"
 
 output_file="$clang_tar_zst"
