@@ -8,12 +8,14 @@
 user="ZyCromerZ" # GitHub user.
 date_=$(cat date_.txt) # updated clang version.
 version_clang="21.0.0git"
+version="21.0.0"
+tc="$HOME/tc/clang-$version"
 version="$version_clang-$date_-release"
 clang_gz="Clang-$version_clang-$date_.tar.gz"
 url="https://github.com/$user/Clang/releases/download/$version/$clang_gz"
 
 output_file="$clang_gz"
-destination_dir="$HOME/tc/clang-20.0.0"
+destination_dir="$tc"
 
 if [ -d "$destination_dir" ]; then
   echo "The directory '$destination_dir' already exists. Exiting script."
