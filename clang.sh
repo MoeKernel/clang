@@ -7,7 +7,7 @@
 
 user="ZyCromerZ" # GitHub user.
 date_=$(cat date_.txt) # updated clang version.
-version_clang="20.0.0git"
+version_clang="21.0.0git"
 version="$version_clang-$date_-release"
 clang_gz="Clang-$version_clang-$date_.tar.gz"
 url="https://github.com/$user/Clang/releases/download/$version/$clang_gz"
